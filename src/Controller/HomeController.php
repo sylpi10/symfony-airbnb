@@ -19,7 +19,7 @@ class HomeController extends AbstractController
         $this->homeRepo = $homeRepo;
     }
 
-    #[Route('/', name: 'create_home')]
+    #[Route('/home', name: 'appreact')]
     public function home(): Response
     {
         $em = $this->manager->getManager();
@@ -29,11 +29,19 @@ class HomeController extends AbstractController
         $em->persist($home);
         $em->flush($home);
 
-        // return $this->render('home/index.html.twig', [
-        //     'controller_name' => 'HomeController',
-        // ]);
+        return $this->render('default/index.html.twig');
 
-        return new Response('saved home with id ' . $home->getId());
+
+        // $response = new Response();
+
+        // $response->headers->set('Content-Type', 'application/json');
+        // $response->headers->set('Access-Control-Allow-Origin', '*');
+
+        // // $response->setContent(json_encode($users));
+
+        // return $response;
+
+        // return new Response(' <h1> saved home with id ' . $home->getId() . '</h1>');
     }
     #[Route('/{id}', name: 'show_home')]
     public function homeDetails(int $id): Response

@@ -1,0 +1,25 @@
+h1{
+    background-color: #f44;
+    padding: 12px;
+    color: #333;
+}
+.navbar, ul{
+    display: flex;
+    background-color: #333;
+    padding: 6px;
+    color: #fff;
+    ul{
+        width:80%;
+        justify-content: space-around;
+    }
+    .navbar-brand{
+        width: fit-content;
+        align-items: center;
+        display: flex;
+        padding-left: 30px;
+        a{
+            color: yellow;
+            align-self: center;
+        }
+    }
+}
